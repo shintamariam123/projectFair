@@ -38,7 +38,6 @@ function Add() {
     const { title, language, overview, github, website, projectImage } = projectDetails
     if (!title || !language || !overview || !github || !website || !projectImage) {
       toast.warning("Please fill the form completely!!!")
-
     } else {
       //api call
       //since this request is having uploading content have to use form data

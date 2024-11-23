@@ -56,7 +56,7 @@ function Edit({ project }) {
       const token = sessionStorage.getItem("token")
       if (token) {
         const reqHeader = {
-          "Content-Type": preview ? "multipart/form-data" : "application/json",
+          "Content-Type": preview  ? "multipart/form-data" : "application/json",
           "Authorization": `Bearer ${token}`
         }
         //api call
@@ -97,7 +97,6 @@ function Edit({ project }) {
                 <input onChange={e => setProjectData({ ...projectData, projectImage: e.target.files[0] })} type="file" style={{ display: 'none' }} />
                 <img className='img-fluid' style={{ height: '200px' }} src={preview ? preview : `${SERVER_URL}/uploads/${project?.projectImage}`} alt="project?.title" />
               </label>
-
             </div>
             <div className="col-lg-8">
               <div className="mb-2">
